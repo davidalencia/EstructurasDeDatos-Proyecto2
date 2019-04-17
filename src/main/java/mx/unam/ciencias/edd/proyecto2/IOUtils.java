@@ -38,5 +38,18 @@ public class IOUtils {
     bw.close();
   }
 
+  public static void error(){
+    System.out.println("Algo a fallado");
+    System.exit(1);
+  }
+  public static void error(String s){
+    System.out.println(s);
+    System.exit(1);
+  }
+  public static void error(String s, int e){
+    System.out.println(s);
+    System.exit(e);
+  }
+
 
 }

@@ -11,7 +11,9 @@ public class App{
     public static void main(String[] args ){
 
       Lista<String> raw = new Lista<>();
-      Lista<String> entradas = new Lista<>();
+      Lista<Integer> entradas = new Lista<>();
+      String tipo = null;
+      toSVG estructura = null;
 
       //leer
       try{
@@ -21,22 +23,23 @@ public class App{
         //leer entrada estandar
         IOUtils.cargaAColeccion(new InputStreamReader(System.in), raw);
       }catch (IOException e) {
-        System.out.println("Algo ha fallado."+
-        "\nPor favor asegurese de que todos los archivos existan.");
-        return;
+        IOUtils.error();
       }
 
-      for (String s: raw)
-        if (s.indexOf("#")==-1)
-          for (String a : s.trim().split(" "))
-              entradas.agrega(a);
+      try{
+        for (String s: raw)
+          if (s.indexOf("#")==-1)
+            for (String a : s.trim().split(" "))
+              if(tipo!=null)
+                entradas.agrega(Integer.parseInt(a));
+              else
+                tipo = a;
+      }catch (NumberFormatException e) {
+        IOUtils.error("Error en el formato");
+      }
 
-      String tipo = entradas.getPrimero();
-      entradas.eliminaPrimero();
       Colecciones tipoC = Colecciones.valueOf(tipo);
 
-      toSVG estructura;
-      estructura = new ArbolAVLSVG<>();
       switch (tipoC) {
         case ArbolAVL:
           estructura = new ArbolAVLSVG<>();
@@ -50,21 +53,24 @@ public class App{
         case ArbolRojinegro:
           estructura = new ArbolRojinegroSVG<>();
           break;
-        //Arreglos,
         case Cola:
           break;
         case Grafica:
           break;
         case Lista:
+          estructura = new ListaSVG<>();
           break;
         case Pila:
           break;
-        //case MonticuloMinimo
-        //  break;
+        case MonticuloMinimo:
+          break;
+        case MonticuloArreglo:
+          break;
       }
 
-      for (String s: entradas)
-        estructura.agrega(Integer.parseInt(s));
+      for (Integer i: entradas)
+        estructura.agrega(i);
+
       System.out.println(estructura.toSVG());
     }
 }

@@ -1,9 +1,11 @@
 package mx.unam.ciencias.edd.proyecto2.svg;
 
 import mx.unam.ciencias.edd.ArbolRojinegro;
+import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolRojinegroSVG<T extends Comparable<T>>
     extends ArbolRojinegro<T>  implements toSVG<T> {
+
   public String toSVG(){
     return ArbolBinarioSVG.toSVG(raiz, elementos, (c, v)->{
       try{

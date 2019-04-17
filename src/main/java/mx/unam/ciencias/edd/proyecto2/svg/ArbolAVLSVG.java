@@ -4,6 +4,7 @@ import mx.unam.ciencias.edd.ArbolAVL;
 
 public class ArbolAVLSVG<T extends Comparable<T>>
     extends ArbolAVL<T>  implements toSVG<T> {
+
   public String toSVG(){
     return ArbolBinarioSVG.toSVG(raiz, elementos, (c, v)->c, (t, v)->{
       SVG g = new SVG("g");
