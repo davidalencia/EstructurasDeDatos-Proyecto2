@@ -47,7 +47,7 @@ public class ColaSVG<T> extends Cola<T> implements toSVG<T> {
         rabo=anterior;
       return;
     }
-    contiene(n.siguiente, e);
+    elimina(n, n.siguiente, e);
   }
   @Override public boolean contiene(T elemento){
     if(elemento==null)
@@ -83,8 +83,6 @@ public class ColaSVG<T> extends Cola<T> implements toSVG<T> {
     SVG svg = new SVG("svg");
     svg.setAtributo("width", ""+(anchoTotal+ancho));
     SVG g = new SVG("g");
-    Nodo n = cabeza;
-    Integer alfa = 0;
     svg.agregaSVG(new Linea(x0/2, y0, anchoTotal ,y0));
     svg.agregaSVG(new Linea(x0/2, y0+alto, anchoTotal, y0+alto));
     svg.agregaSVG(Flecha.headers());
@@ -94,6 +92,8 @@ public class ColaSVG<T> extends Cola<T> implements toSVG<T> {
     f2.setCabezera(false);
     svg.agregaSVG(f1);
     svg.agregaSVG(f2);
+    Nodo n = cabeza;
+    Integer alfa = 0;
     while(n!=null){
       Integer x = x0+alfa*ancho;
       Texto t = new Texto(x+ancho/3, y0+alto*2/3, n.elemento.toString());

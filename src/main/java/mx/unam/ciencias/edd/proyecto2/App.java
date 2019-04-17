@@ -10,10 +10,11 @@ import java.io.IOException;
 public class App{
     public static void main(String[] args ){
 
-      Lista<String> raw = new Lista<>();
-      Lista<Integer> entradas = new Lista<>();
+      Colecciones tipoC=null;
       String tipo = null;
       toSVG estructura = null;
+      Lista<String> raw = new Lista<>();
+      Lista<Integer> entradas = new Lista<>();
 
       //leer
       try{
@@ -34,11 +35,10 @@ public class App{
                 entradas.agrega(Integer.parseInt(a));
               else
                 tipo = a;
+        tipoC = Colecciones.valueOf(tipo);
       }catch (NumberFormatException e) {
         IOUtils.error("Error en el formato");
       }
-
-      Colecciones tipoC = Colecciones.valueOf(tipo);
 
       switch (tipoC) {
         case ArbolAVL:
@@ -66,6 +66,7 @@ public class App{
         case MonticuloMinimo:
           break;
         case Pila:
+          estructura = new PilaSVG<>();
           break;
       }
 

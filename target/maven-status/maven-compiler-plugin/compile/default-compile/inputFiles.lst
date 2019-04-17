@@ -7,6 +7,7 @@
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/Colecciones.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/IOUtils.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/ModificaSVG.java
+/home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/PilaSVG.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/Pila.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/App.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/Grafica.java
@@ -29,6 +30,7 @@
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/ArbolAVL.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/Cuadrado.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/Circulo.java
+/home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/Flecha.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/AccionVerticeGrafica.java
 /home/valencia/Documents/escuela/licenciatura/2doSemestre/estructurasDeDatos/proyecto2/src/main/java/mx/unam/ciencias/edd/proyecto2/svg/ArbolBinarioOrdenadoSVG.java
