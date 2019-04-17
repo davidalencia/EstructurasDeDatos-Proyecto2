@@ -54,17 +54,18 @@ public class App{
           estructura = new ArbolRojinegroSVG<>();
           break;
         case Cola:
+          estructura = new ColaSVG<>();
           break;
         case Grafica:
           break;
         case Lista:
           estructura = new ListaSVG<>();
           break;
-        case Pila:
+        case MonticuloArreglo:
           break;
         case MonticuloMinimo:
           break;
-        case MonticuloArreglo:
+        case Pila:
           break;
       }
 

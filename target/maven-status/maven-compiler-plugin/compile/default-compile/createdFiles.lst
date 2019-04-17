@@ -6,6 +6,7 @@ mx/unam/ciencias/edd/ArbolBinarioOrdenado.class
 mx/unam/ciencias/edd/AccionVerticeGrafica.class
 mx/unam/ciencias/edd/proyecto2/svg/Atributo.class
 mx/unam/ciencias/edd/proyecto2/svg/Cuadrado.class
+mx/unam/ciencias/edd/proyecto2/svg/ColaSVG.class
 mx/unam/ciencias/edd/proyecto2/App.class
 mx/unam/ciencias/edd/ExcepcionIndiceInvalido.class
 mx/unam/ciencias/edd/ArbolBinarioCompleto$Iterador.class
@@ -19,6 +20,7 @@ mx/unam/ciencias/edd/ArbolBinario$Vertice.class
 mx/unam/ciencias/edd/proyecto2/svg/ListaSVG.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolRojinegroSVG.class
 mx/unam/ciencias/edd/Grafica$Vertice.class
+mx/unam/ciencias/edd/proyecto2/svg/ColaSVG$Iterador.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolBinarioSVG.class
 mx/unam/ciencias/edd/MeteSaca$Nodo.class
 mx/unam/ciencias/edd/Coleccion.class

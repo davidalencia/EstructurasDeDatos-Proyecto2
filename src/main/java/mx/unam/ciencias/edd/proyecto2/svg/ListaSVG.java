@@ -3,10 +3,9 @@ package mx.unam.ciencias.edd.proyecto2.svg;
 import mx.unam.ciencias.edd.Lista;
 import java.util.Iterator;
 
-
 public class ListaSVG<T> extends Lista<T> implements toSVG<T> {
 
-  public String toSVG(){
+    @Override public String toSVG(){
     final Integer x0 = 20;
     final Integer y0 = 20;
     final Integer ancho = 35;
