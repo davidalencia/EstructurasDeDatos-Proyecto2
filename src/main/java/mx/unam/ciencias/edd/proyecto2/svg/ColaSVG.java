@@ -2,6 +2,7 @@ package mx.unam.ciencias.edd.proyecto2.svg;
 
 import mx.unam.ciencias.edd.Cola;
 import java.util.Iterator;
+import mx.unam.ciencias.edd.Coleccion;
 
 public class ColaSVG<T> extends Cola<T> implements toSVG<T> {
 
@@ -25,6 +26,11 @@ public class ColaSVG<T> extends Cola<T> implements toSVG<T> {
           n = n.siguiente;
           return n.elemento;
       }
+  }
+
+  public ColaSVG(Coleccion<T> c){
+    for (T e: c)
+      agrega(e);
   }
 
   @Override public void agrega(T elemento){

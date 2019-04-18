@@ -27,6 +27,7 @@ public class App{
         IOUtils.error();
       }
 
+      //analisis de entrada
       try{
         for (String s: raw)
           if (s.indexOf("#")==-1)
@@ -36,43 +37,43 @@ public class App{
               else
                 tipo = a;
         tipoC = Colecciones.valueOf(tipo);
-      }catch (NumberFormatException e) {
+
+        //tipo de estructura
+        switch (tipoC) {
+          case ArbolAVL:
+            estructura = new ArbolAVLSVG<>(entradas);
+            break;
+          case ArbolBinarioCompleto:
+            estructura = new ArbolBinarioCompletoSVG<>(entradas);
+            break;
+          case ArbolBinarioOrdenado:
+            estructura = new ArbolBinarioOrdenadoSVG<>(entradas);
+            break;
+          case ArbolRojinegro:
+            estructura = new ArbolRojinegroSVG<>(entradas);
+            break;
+          case Cola:
+            estructura = new ColaSVG<>(entradas);
+            break;
+          case Grafica:
+            estructura = new GraficaSVG<>(entradas);
+            break;
+          case Lista:
+            estructura = new ListaSVG<>(entradas);
+            break;
+          case MonticuloArreglo:
+            break;
+          case MonticuloMinimo:
+            break;
+          case Pila:
+            estructura = new PilaSVG<>(entradas);
+            break;
+        }
+      }catch (Exception e) {
         IOUtils.error("Error en el formato");
       }
 
-      switch (tipoC) {
-        case ArbolAVL:
-          estructura = new ArbolAVLSVG<>();
-          break;
-        case ArbolBinarioCompleto:
-          estructura = new ArbolBinarioCompletoSVG<>();
-          break;
-        case ArbolBinarioOrdenado:
-          estructura = new ArbolBinarioOrdenadoSVG<>();
-          break;
-        case ArbolRojinegro:
-          estructura = new ArbolRojinegroSVG<>();
-          break;
-        case Cola:
-          estructura = new ColaSVG<>();
-          break;
-        case Grafica:
-          break;
-        case Lista:
-          estructura = new ListaSVG<>();
-          break;
-        case MonticuloArreglo:
-          break;
-        case MonticuloMinimo:
-          break;
-        case Pila:
-          estructura = new PilaSVG<>();
-          break;
-      }
-
-      for (Integer i: entradas)
-        estructura.agrega(i);
-
+      //transformación a svg
       System.out.println(estructura.toSVG());
     }
 }

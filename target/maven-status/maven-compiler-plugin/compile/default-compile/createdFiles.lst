@@ -12,11 +12,13 @@ mx/unam/ciencias/edd/proyecto2/App.class
 mx/unam/ciencias/edd/ExcepcionIndiceInvalido.class
 mx/unam/ciencias/edd/ArbolBinarioCompleto$Iterador.class
 mx/unam/ciencias/edd/ArbolBinario.class
+mx/unam/ciencias/edd/proyecto2/svg/GraficaSVG.class
 mx/unam/ciencias/edd/Arreglos.class
 mx/unam/ciencias/edd/proyecto2/svg/Circulo.class
 mx/unam/ciencias/edd/VerticeGrafica.class
 mx/unam/ciencias/edd/proyecto2/Colecciones.class
 mx/unam/ciencias/edd/Grafica$Iterador.class
+mx/unam/ciencias/edd/proyecto2/svg/GraficaSVG$CirculoInformativo.class
 mx/unam/ciencias/edd/ArbolBinario$Vertice.class
 mx/unam/ciencias/edd/proyecto2/svg/ListaSVG.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolRojinegroSVG.class

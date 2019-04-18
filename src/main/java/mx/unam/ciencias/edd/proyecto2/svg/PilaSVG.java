@@ -1,6 +1,7 @@
 package mx.unam.ciencias.edd.proyecto2.svg;
 
 import mx.unam.ciencias.edd.Pila;
+import mx.unam.ciencias.edd.Coleccion;
 import java.util.Iterator;
 
 public class PilaSVG<T> extends Pila<T> implements toSVG<T> {
@@ -21,6 +22,11 @@ public class PilaSVG<T> extends Pila<T> implements toSVG<T> {
       @Override public T next() {
           return saca();
       }
+  }
+
+  public PilaSVG(Coleccion<T> c){
+    for (T e: c)
+      agrega(e);
   }
 
   @Override public void agrega(T elemento){

@@ -1,2 +1,2 @@
 
-#"**/*.*": "mvn package -B"
+"**/*.*": "mvn package -B"

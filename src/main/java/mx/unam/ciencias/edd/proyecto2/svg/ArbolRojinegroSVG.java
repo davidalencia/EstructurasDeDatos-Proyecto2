@@ -6,6 +6,10 @@ import mx.unam.ciencias.edd.Coleccion;
 public class ArbolRojinegroSVG<T extends Comparable<T>>
     extends ArbolRojinegro<T>  implements toSVG<T> {
 
+  public ArbolRojinegroSVG(Coleccion<T> c){
+    super(c);
+  }
+
   public String toSVG(){
     return ArbolBinarioSVG.toSVG(raiz, elementos, (c, v)->{
       try{

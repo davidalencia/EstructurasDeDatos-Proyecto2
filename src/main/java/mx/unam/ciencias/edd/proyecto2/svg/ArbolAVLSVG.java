@@ -1,10 +1,14 @@
 package mx.unam.ciencias.edd.proyecto2.svg;
 
 import mx.unam.ciencias.edd.ArbolAVL;
+import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolAVLSVG<T extends Comparable<T>>
     extends ArbolAVL<T>  implements toSVG<T> {
 
+  public ArbolAVLSVG(Coleccion<T> c){
+    super(c);
+  }
   public String toSVG(){
     return ArbolBinarioSVG.toSVG(raiz, elementos, (c, v)->c, (t, v)->{
       SVG g = new SVG("g");
