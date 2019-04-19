@@ -64,6 +64,10 @@ public class App{
           case MonticuloArreglo:
             break;
           case MonticuloMinimo:
+            Lista<ValorIndexable<Integer>> cambio = new Lista<>();
+            for (Integer i: entradas)
+              cambio.agrega(new ValorIndexable<Integer>(i, i));
+            estructura = new MonticuloMinimoSVG<ValorIndexable<Integer>>(cambio);
             break;
           case Pila:
             estructura = new PilaSVG<>(entradas);

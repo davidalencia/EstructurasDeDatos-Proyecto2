@@ -1,8 +1,9 @@
 package mx.unam.ciencias.edd.proyecto2.svg;
 
 import mx.unam.ciencias.edd.ArbolBinario;
+import mx.unam.ciencias.edd.VerticeArbolBinario;
 
-public abstract class ArbolBinarioSVG extends ArbolBinario {
+public abstract class ArbolBinarioSVG {
 
     final static int ALTO = 25;
     final static int ANCHO = 20;
@@ -10,12 +11,11 @@ public abstract class ArbolBinarioSVG extends ArbolBinario {
     final static int Y0 = ALTO*2;
     static int ancho_total = 0;
 
-
-    public static String toSVG(Vertice raiz, int elementos){
+    public static String toSVG(VerticeArbolBinario raiz, int elementos){
       return toSVG(raiz, elementos, (c, v)->c, (t, v)->t);
     }
 
-    public static String toSVG(Vertice raiz,
+    public static String toSVG(VerticeArbolBinario raiz,
                                int elementos,
                                ModificaSVG modificaCirculo,
                                ModificaSVG modificaTexto){
@@ -33,7 +33,7 @@ public abstract class ArbolBinarioSVG extends ArbolBinario {
       return svg.toString();
     }
     private static void toSVG(SVG svg,
-                              Vertice v,
+                              VerticeArbolBinario v,
                               int x,
                               ModificaSVG modificaCirculo,
                               ModificaSVG modificaTexto){
@@ -42,19 +42,19 @@ public abstract class ArbolBinarioSVG extends ArbolBinario {
       c.setAtributo("stroke", "black");
       c.setAtributo("fill", "white");
       svg.agregaSVG(modificaCirculo.modifica(c, v));
-      Texto t = new Texto(x-RADIO/2, y+5, v.elemento.toString());
+      Texto t = new Texto(x-RADIO/2, y+5, v.get().toString());
       svg.agregaSVG(modificaTexto.modifica(t, v));
       int deltaX = (int) Math.floor(ancho_total/Math.pow(2, v.profundidad()+1))/2;
       int yHijos = Y0+ALTO*(v.profundidad()+1)*2-RADIO;
       if(v.hayIzquierdo()){
         int xIzq = x-deltaX;
         svg.agregaSVG(new Linea(x, y+RADIO, xIzq, yHijos));
-        toSVG(svg, v.izquierdo, xIzq, modificaCirculo, modificaTexto);
+        toSVG(svg, v.izquierdo(), xIzq, modificaCirculo, modificaTexto);
       }
       if(v.hayDerecho()){
         int xDer = x+deltaX;
         svg.agregaSVG(new Linea(x, y+RADIO, xDer, yHijos));
-        toSVG(svg, v.derecho, xDer, modificaCirculo, modificaTexto);
+        toSVG(svg, v.derecho(), xDer, modificaCirculo, modificaTexto);
       }
     }
 }
