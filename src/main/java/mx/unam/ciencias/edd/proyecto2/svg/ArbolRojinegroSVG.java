@@ -4,7 +4,7 @@ import mx.unam.ciencias.edd.ArbolRojinegro;
 import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolRojinegroSVG<T extends Comparable<T>>
-    extends ArbolRojinegro<T>  implements toSVG<T> {
+    extends ArbolRojinegro<T>  implements toSVG {
 
   public ArbolRojinegroSVG(Coleccion<T> c){
     super(c);
@@ -31,6 +31,6 @@ public class ArbolRojinegroSVG<T extends Comparable<T>>
     }, (t, v)->{
       t.setAtributo("fill", "white");
       return t;
-    });
+    }).toString();
   }
 }

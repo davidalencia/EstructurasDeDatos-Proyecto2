@@ -41,36 +41,40 @@ public class App{
         //tipo de estructura
         switch (tipoC) {
           case ArbolAVL:
-            estructura = new ArbolAVLSVG<>(entradas);
+            estructura = new ArbolAVLSVG<Integer>(entradas);
             break;
           case ArbolBinarioCompleto:
-            estructura = new ArbolBinarioCompletoSVG<>(entradas);
+            estructura = new ArbolBinarioCompletoSVG<Integer>(entradas);
             break;
           case ArbolBinarioOrdenado:
-            estructura = new ArbolBinarioOrdenadoSVG<>(entradas);
+            estructura = new ArbolBinarioOrdenadoSVG<Integer>(entradas);
             break;
           case ArbolRojinegro:
-            estructura = new ArbolRojinegroSVG<>(entradas);
+            estructura = new ArbolRojinegroSVG<Integer>(entradas);
             break;
           case Cola:
-            estructura = new ColaSVG<>(entradas);
+            estructura = new ColaSVG<Integer>(entradas);
             break;
           case Grafica:
-            estructura = new GraficaSVG<>(entradas);
+            estructura = new GraficaSVG<Integer>(entradas);
             break;
           case Lista:
-            estructura = new ListaSVG<>(entradas);
+            estructura = new ListaSVG<Integer>(entradas);
             break;
           case MonticuloArreglo:
+            Lista<ValorIndexable<Integer>> cambio1 = new Lista<>();
+            for (Integer i: entradas)
+              cambio1.agrega(new ValorIndexable<Integer>(i, i));
+            estructura = new MonticuloArregloSVG<ValorIndexable<Integer>>(cambio1);
             break;
           case MonticuloMinimo:
-            Lista<ValorIndexable<Integer>> cambio = new Lista<>();
+            Lista<ValorIndexable<Integer>> cambio2 = new Lista<>();
             for (Integer i: entradas)
-              cambio.agrega(new ValorIndexable<Integer>(i, i));
-            estructura = new MonticuloMinimoSVG<ValorIndexable<Integer>>(cambio);
+              cambio2.agrega(new ValorIndexable<Integer>(i, i));
+            estructura = new MonticuloMinimoSVG<ValorIndexable<Integer>>(cambio2);
             break;
           case Pila:
-            estructura = new PilaSVG<>(entradas);
+            estructura = new PilaSVG<Integer>(entradas);
             break;
         }
       }catch (Exception e) {

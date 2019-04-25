@@ -12,27 +12,12 @@ public class Linea extends SVG {
     setAtributo("stroke", stroke);
   }
   public Linea(Integer x1, Integer y1, Integer x2, Integer y2, String stroke){
-    super("line");
-    setAtributo("x1", x1.toString());
-    setAtributo("y1", y1.toString());
-    setAtributo("x2", x2.toString());
-    setAtributo("y2", y2.toString());
-    setAtributo("stroke", stroke);
+    this(x1.toString(), y1.toString(), x2.toString(), y2.toString(), stroke);
   }
   public Linea(String x1, String y1, String x2, String y2){
-    super("line");
-    setAtributo("x1", x1);
-    setAtributo("y1", y1);
-    setAtributo("x2", x2);
-    setAtributo("y2", y2);
-    setAtributo("stroke", "black");
+    this(x1, y1, x2, y2, "black");
   }
   public Linea(Integer x1, Integer y1, Integer x2, Integer y2){
-    super("line");
-    setAtributo("x1", x1.toString());
-    setAtributo("y1", y1.toString());
-    setAtributo("x2", x2.toString());
-    setAtributo("y2", y2.toString());
-    setAtributo("stroke", "black");
+    this(x1.toString(), y1.toString(), x2.toString(), y2.toString(), "black");
   }
 }

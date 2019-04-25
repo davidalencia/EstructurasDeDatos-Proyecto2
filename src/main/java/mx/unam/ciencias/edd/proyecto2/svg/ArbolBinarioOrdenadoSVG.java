@@ -4,12 +4,12 @@ import mx.unam.ciencias.edd.ArbolBinarioOrdenado;
 import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolBinarioOrdenadoSVG<T extends Comparable<T>>
-    extends ArbolBinarioOrdenado<T>  implements toSVG<T> {
+    extends ArbolBinarioOrdenado<T>  implements toSVG {
 
   public ArbolBinarioOrdenadoSVG(Coleccion<T> c){
     super(c);
   }
   public String toSVG(){
-    return ArbolBinarioSVG.toSVG(raiz, elementos);
+    return ArbolBinarioSVG.toSVG(raiz, elementos).toString();
   }
 }

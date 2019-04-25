@@ -10,10 +10,7 @@ public class Texto extends SVG {
     setContenido(texto);
   }
   public Texto(Integer x, Integer y, String texto){
-    super("text");
-    setAtributo("x", x.toString());
-    setAtributo("y", y.toString());
-    setContenido(texto);
+    this(x.toString(), y.toString(), texto);
   }
 
 }

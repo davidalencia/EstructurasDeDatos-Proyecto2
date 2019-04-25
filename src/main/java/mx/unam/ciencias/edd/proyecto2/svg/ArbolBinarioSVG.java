@@ -11,26 +11,26 @@ public abstract class ArbolBinarioSVG {
     final static int Y0 = ALTO*2;
     static int ancho_total = 0;
 
-    public static String toSVG(VerticeArbolBinario raiz, int elementos){
+    public static SVG toSVG(VerticeArbolBinario raiz, int elementos){
       return toSVG(raiz, elementos, (c, v)->c, (t, v)->t);
     }
 
-    public static String toSVG(VerticeArbolBinario raiz,
+    public static SVG toSVG(VerticeArbolBinario raiz,
                                int elementos,
                                ModificaSVG modificaCirculo,
                                ModificaSVG modificaTexto){
+      SVG svg = new SVG("svg");
       if(raiz==null)
-        return "";
+        return svg;
       int elementosPB =(int) Math.pow(2, raiz.altura());
       ancho_total = elementosPB*RADIO*3;
-      SVG svg = new SVG("svg");
       SVG g = new SVG("g");
       int x0 = ancho_total/2;
       toSVG(g, raiz, x0, modificaCirculo, modificaTexto);
       svg.agregaSVG(g);
       svg.setAtributo("width", ""+ancho_total);
       svg.setAtributo("height", ""+(2*Y0+(raiz.altura()+1)*(ALTO+RADIO)));
-      return svg.toString();
+      return svg;
     }
     private static void toSVG(SVG svg,
                               VerticeArbolBinario v,

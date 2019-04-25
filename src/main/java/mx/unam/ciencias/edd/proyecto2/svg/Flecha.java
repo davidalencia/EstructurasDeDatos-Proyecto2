@@ -16,34 +16,13 @@ public class Flecha extends SVG {
     setAtributo("marker-end", "url(#end-arrow)");
   }
   public Flecha(Integer x1, Integer y1, Integer x2, Integer y2, String stroke){
-    super("line");
-    cabezera = true;
-    setAtributo("x1", x1.toString());
-    setAtributo("y1", y1.toString());
-    setAtributo("x2", x2.toString());
-    setAtributo("y2", y2.toString());
-    setAtributo("stroke", stroke);
-    setAtributo("marker-end", "url(#end-arrow)");
+    this(x1.toString(), y1.toString(), x2.toString(), y2.toString(), stroke);
   }
   public Flecha(String x1, String y1, String x2, String y2){
-    super("line");
-    cabezera = true;
-    setAtributo("x1", x1);
-    setAtributo("y1", y1);
-    setAtributo("x2", x2);
-    setAtributo("y2", y2);
-    setAtributo("stroke", "black");
-    setAtributo("marker-end", "url(#end-arrow)");
+    this(x1, y1, x2, y2, "black");
   }
   public Flecha(Integer x1, Integer y1, Integer x2, Integer y2){
-    super("line");
-    cabezera = true;
-    setAtributo("x1", x1.toString());
-    setAtributo("y1", y1.toString());
-    setAtributo("x2", x2.toString());
-    setAtributo("y2", y2.toString());
-    setAtributo("stroke", "black");
-    setAtributo("marker-end", "url(#end-arrow)");
+    this(x1.toString(), y1.toString(), x2.toString(), y2.toString(), "black");
   }
 
   public static SVG headers(){

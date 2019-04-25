@@ -4,7 +4,7 @@ import mx.unam.ciencias.edd.ArbolAVL;
 import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolAVLSVG<T extends Comparable<T>>
-    extends ArbolAVL<T>  implements toSVG<T> {
+    extends ArbolAVL<T>  implements toSVG {
 
   public ArbolAVLSVG(Coleccion<T> c){
     super(c);
@@ -29,6 +29,6 @@ public class ArbolAVLSVG<T extends Comparable<T>>
         g.agregaSVG(info);
       } catch(Exception e) {}
       return g;
-    });
+    }).toString();
   }
 }

@@ -11,11 +11,7 @@ public class Cuadrado extends SVG {
     setAtributo("y", y);
   }
   public Cuadrado(Integer x,Integer y,Integer width,Integer height){
-    super("rect");
-    setAtributo("width", width.toString());
-    setAtributo("height", height.toString());
-    setAtributo("x", x.toString());
-    setAtributo("y", y.toString());
+    this(x.toString(), y.toString(), width.toString(), height.toString());
   }
 
 }

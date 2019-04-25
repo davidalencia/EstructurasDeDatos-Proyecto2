@@ -10,9 +10,6 @@ public class Circulo extends SVG {
     setAtributo("r", r);
   }
   public Circulo(Integer cx, Integer cy, Integer r){
-    super("circle");
-    setAtributo("cx", cx.toString());
-    setAtributo("cy", cy.toString());
-    setAtributo("r", r.toString());
+    this(cx.toString(), cy.toString(), r.toString());
   }
 }

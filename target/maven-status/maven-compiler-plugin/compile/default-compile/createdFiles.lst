@@ -28,7 +28,6 @@ mx/unam/ciencias/edd/proyecto2/svg/ListaSVG.class
 mx/unam/ciencias/edd/MonticuloArreglo.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolRojinegroSVG.class
 mx/unam/ciencias/edd/Grafica$Vertice.class
-mx/unam/ciencias/edd/proyecto2/svg/ColaSVG$Iterador.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolBinarioSVG.class
 mx/unam/ciencias/edd/MeteSaca$Nodo.class
 mx/unam/ciencias/edd/Coleccion.class
@@ -50,12 +49,12 @@ mx/unam/ciencias/edd/proyecto2/App$1.class
 mx/unam/ciencias/edd/MonticuloMinimo.class
 mx/unam/ciencias/edd/proyecto2/svg/PilaSVG.class
 mx/unam/ciencias/edd/proyecto2/svg/SVG.class
-mx/unam/ciencias/edd/proyecto2/svg/PilaSVG$Iterador.class
 mx/unam/ciencias/edd/ArbolBinarioOrdenado$Iterador.class
 mx/unam/ciencias/edd/ArbolBinarioCompleto.class
 mx/unam/ciencias/edd/proyecto2/svg/ModificaSVG.class
 mx/unam/ciencias/edd/proyecto2/svg/ArbolBinarioOrdenadoSVG.class
 mx/unam/ciencias/edd/proyecto2/svg/MonticuloMinimoSVG$VerticeArreglo.class
+mx/unam/ciencias/edd/proyecto2/svg/MonticuloArregloSVG.class
 mx/unam/ciencias/edd/MonticuloMinimo$Iterador.class
 mx/unam/ciencias/edd/Lista$Iterador.class
 mx/unam/ciencias/edd/ComparableIndexable.class

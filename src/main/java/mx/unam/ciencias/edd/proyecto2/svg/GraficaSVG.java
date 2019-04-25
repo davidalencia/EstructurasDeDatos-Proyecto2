@@ -7,8 +7,9 @@ import mx.unam.ciencias.edd.VerticeGrafica;
 import java.util.Iterator;
 
 
-public class GraficaSVG<T> extends Grafica<T> implements toSVG<T> {
-   class CirculoInformativo{
+public class GraficaSVG<T> extends Grafica<T> implements toSVG {
+
+  class CirculoInformativo{
     private Integer radio, x, y;
     private T e;
     CirculoInformativo(int radio, int x, int y){
@@ -16,21 +17,21 @@ public class GraficaSVG<T> extends Grafica<T> implements toSVG<T> {
       this.x = x;
       this.y = y;
       e = null;
-     }
-     CirculoInformativo(int radio, int x, int y, T e){
-       this.radio = radio;
-       this.x = x;
-       this.y = y;
-       this.e = e;
+    }
+    CirculoInformativo(int radio, int x, int y, T e){
+      this.radio = radio;
+      this.x = x;
+      this.y = y;
+      this.e = e;
+    }
+    @Override public boolean equals(Object o){
+      try{
+        CirculoInformativo c = (CirculoInformativo) o;
+        return e.equals(c.e);
+      }catch (Exception e) {
+        return false;
       }
-      @Override public boolean equals(Object o){
-        try{
-          CirculoInformativo c = (CirculoInformativo) o;
-          return e.equals(c.e);
-        }catch (Exception e) {
-          return false;
-        }
-      }
+    }
   }
 
   public GraficaSVG(Coleccion<T> c){

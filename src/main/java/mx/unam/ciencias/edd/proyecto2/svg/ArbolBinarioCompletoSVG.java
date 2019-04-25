@@ -4,13 +4,13 @@ import mx.unam.ciencias.edd.ArbolBinarioCompleto;
 import mx.unam.ciencias.edd.Coleccion;
 
 public class ArbolBinarioCompletoSVG<T extends Comparable<T>>
-    extends ArbolBinarioCompleto<T>  implements toSVG<T> {
+    extends ArbolBinarioCompleto<T>  implements toSVG {
 
   public ArbolBinarioCompletoSVG(Coleccion<T> c){
     super(c);
   }
 
   public String toSVG(){
-    return ArbolBinarioSVG.toSVG(raiz, elementos);
+    return ArbolBinarioSVG.toSVG(raiz, elementos).toString();
   }
 }

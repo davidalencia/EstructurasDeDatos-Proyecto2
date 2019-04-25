@@ -4,64 +4,13 @@ import mx.unam.ciencias.edd.Pila;
 import mx.unam.ciencias.edd.Coleccion;
 import java.util.Iterator;
 
-public class PilaSVG<T> extends Pila<T> implements toSVG<T> {
-
-  private class Iterador implements Iterator<T> {
-
-      private Nodo n;
-
-      /* Inicializa al iterador. */
-      public Iterador() {}
-
-      /* Nos dice si hay un elemento siguiente. */
-      @Override public boolean hasNext() {
-          return esVacia();
-      }
-
-      /* Regresa el siguiente elemento en orden BFS. */
-      @Override public T next() {
-          return saca();
-      }
-  }
+public class PilaSVG<T> extends Pila<T> implements toSVG{
 
   public PilaSVG(Coleccion<T> c){
     for (T e: c)
-      agrega(e);
+      mete(e);
   }
-
-  @Override public void agrega(T elemento){
-      mete(elemento);
-  }
-  @Override public void elimina(T elemento){
-      if(elemento==null)
-        return;
-      elimina(null, cabeza, elemento);
-  }
-  private void elimina(Nodo anterior, Nodo n, T e){
-    if(n==null)
-      return;
-    if(e.equals(n.elemento)){
-      if(anterior==null)
-        cabeza = n.siguiente;
-      else
-        anterior.siguiente = n.siguiente;
-      if(anterior.siguiente==null);
-        rabo=anterior;
-      return;
-    }
-    elimina(n, n.siguiente, e);
-  }
-  @Override public boolean contiene(T elemento){
-    if(elemento==null)
-      return false;
-    return contiene(cabeza, elemento);
-  }
-  private boolean contiene(Nodo n, T e){
-    if(n==null)
-      return false;
-    return (e.equals(n.elemento))? true: contiene(n.siguiente, e);
-  }
-  @Override public int getElementos(){
+  public int getElementos(){
     return getElementos(cabeza, 0);
   }
   private int getElementos(Nodo n, int omega){
@@ -69,13 +18,6 @@ public class PilaSVG<T> extends Pila<T> implements toSVG<T> {
       return omega;
     return getElementos(n.siguiente, ++omega);
   }
-  @Override public void limpia(){
-    cabeza = rabo = null;
-  }
-  @Override public Iterator iterator(){
-    return new Iterador();
-  }
-
   @Override public String toSVG(){
     final Integer x0 = 20;
     final Integer y0 = 20;

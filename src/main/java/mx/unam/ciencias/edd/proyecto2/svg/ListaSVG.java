@@ -4,13 +4,12 @@ import mx.unam.ciencias.edd.Lista;
 import java.util.Iterator;
 import mx.unam.ciencias.edd.Coleccion;
 
-public class ListaSVG<T> extends Lista<T> implements toSVG<T> {
+public class ListaSVG<T> extends Lista<T> implements toSVG {
 
     public ListaSVG(Coleccion<T> c){
       for (T e: c)
         agrega(e);
     }
-
 
     @Override public String toSVG(){
     final Integer x0 = 20;
