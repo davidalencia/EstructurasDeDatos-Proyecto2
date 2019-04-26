@@ -114,8 +114,8 @@ public class MonticuloMinimoSVG<T extends ComparableIndexable<T>>
     SVG flecha = new SVG("path");
     flecha.setAtributo("fill", "none");
     flecha.setAtributo("d",
-                       String.format("M%d,%d Q%d,%d %d,%d, l-3,0 l3-3, l3,3 l-3,0",
-                                     x1, y1,curvaX, curvaY, x2, y2+4));
+                    String.format("M%d,%d Q%d,%d %d,%d, l-3,0 l3-3, l3,3 l-3,0",
+                                    x1,y1, curvaX,curvaY, x2,y2+4));
     return flecha;
   }
 }
