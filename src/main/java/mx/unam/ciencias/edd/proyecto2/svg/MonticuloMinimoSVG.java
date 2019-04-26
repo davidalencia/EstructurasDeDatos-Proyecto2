@@ -72,31 +72,29 @@ public class MonticuloMinimoSVG<T extends ComparableIndexable<T>>
     int alfa = 0;
     for (T e: this) {
       VerticeArreglo v = new VerticeArreglo(alfa);
+      String color = (alfa%2==0)? "black": "red";
+      int x1 =x0+ancho*alfa+ancho*2/3, y1 = y0+ancho;
       if(v.hayDerecho()){
-        SVG flecha = new SVG("path");
-        flecha.setAtributo("stroke", "black");
-        flecha.setAtributo("fill", "none");
-        flecha.setAtributo("d", String.format("M%d,%d Q%d,%d %d,%d",
-            x0+ancho*alfa+ancho/3,  //x1
-            y0+ancho,  //y1
-            x0+ancho*alfa+ancho, //CurvaX
-            y0+ancho*alfa*3/2,  //CurvaY
-            x0+(2*alfa+2)*ancho+ancho/2, //x2
-            y0+ancho)); //y2
-        g.agregaSVG(flecha);
+        SVG f = flecha(
+            x1,  //x1
+            y1,  //y1
+            x1, //CurvaX
+            y0+ancho*5,  //CurvaY
+            x0+(2*alfa+2)*ancho+ancho/3, //x2
+            y0+ancho); //y2
+        f.setAtributo("stroke", color);
+        g.agregaSVG(f);
       }
       if(v.hayIzquierdo()){
-        SVG flecha = new SVG("path");
-        flecha.setAtributo("stroke", "black");
-        flecha.setAtributo("fill", "none");
-        flecha.setAtributo("d", String.format("M%d,%d Q%d,%d %d,%d",
-            x0+ancho*alfa+ancho/3,  //x1
-            y0+ancho,  //y1
-            x0+ancho*alfa+ancho, //CurvaX
-            y0+ancho*3/2,  //CurvaY
-            x0+(2*alfa+1)*ancho+ancho/2, //x2
-            y0+ancho)); //y2
-        g.agregaSVG(flecha);
+        SVG f =flecha(
+            x1,  //x1
+            y1,  //y1
+            x1, //CurvaX
+            y0+ancho*5,  //CurvaY
+            x0+(2*alfa+1)*ancho+ancho/3, //x2
+            y0+ancho); //y2
+        f.setAtributo("stroke", color);
+        g.agregaSVG(f);
       }
       Cuadrado c = new Cuadrado(x0+ancho*alfa, y0, ancho, alto);
       c.setAtributo("fill", "white");
@@ -107,22 +105,17 @@ public class MonticuloMinimoSVG<T extends ComparableIndexable<T>>
       g.agregaSVG(t);
       alfa++;
     }
+    svg.setAtributo("width", ""+((getElementos()+2)*ancho));
     svg.agregaSVG(g);
-
     return svg.toString();
   }
 
-  private SVG flecha(int x1, int y1, int curvaX, int curvaY, int x2, int y2, int alfa){
+  private SVG flecha(int x1, int y1, int curvaX, int curvaY, int x2, int y2){
     SVG flecha = new SVG("path");
-    flecha.setAtributo("stroke", "black");
     flecha.setAtributo("fill", "none");
-    flecha.setAtributo("d", String.format("M%d,%d Q%d,%d %d,%d",
-        x0+ancho*alfa+ancho/3,  //x1
-        y0+ancho,  //y1
-        x0+ancho*alfa+ancho, //CurvaX
-        y0+ancho*3/2,  //CurvaY
-        x0+(2*alfa+1)*ancho+ancho/2, //x2
-        y0+ancho)); //y2
+    flecha.setAtributo("d",
+                       String.format("M%d,%d Q%d,%d %d,%d, l-3,0 l3-3, l3,3 l-3,0",
+                                     x1, y1,curvaX, curvaY, x2, y2+4));
     return flecha;
   }
 }

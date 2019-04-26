@@ -29,13 +29,18 @@ public class App{
 
       //analisis de entrada
       try{
-        for (String s: raw)
-          if (s.indexOf("#")==-1)
-            for (String a : s.trim().split(" "))
+        for (String s: raw){
+          boolean gato = false;
+          for (String a : s.trim().split(" ")){
+            if(a.indexOf("#")!=-1)
+              gato = true;
+            if(!gato)
               if(tipo!=null)
                 entradas.agrega(Integer.parseInt(a));
               else
                 tipo = a;
+          }
+        }
         tipoC = Colecciones.valueOf(tipo);
 
         //tipo de estructura

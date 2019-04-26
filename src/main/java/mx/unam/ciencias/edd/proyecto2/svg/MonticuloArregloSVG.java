@@ -33,6 +33,7 @@ public class MonticuloArregloSVG<T extends ComparableIndexable<T>>
       g.agregaSVG(t);
       alfa++;
     }
+    svg.setAtributo("width", ""+((getElementos()+2)*ancho));
     svg.agregaSVG(g);
     return svg.toString();
   }
